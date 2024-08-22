@@ -1,0 +1,33 @@
+name: mediator
+description: "Simple, unambitious mediator implementation in Flutter"
+version: 0.0.1
+maintainer: Faraj Shuaib (@farajshuaib)
+homepage: https://github.com/farajshuaib/flutter_mediator
+
+environment:
+  sdk: '>=3.4.1 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  analyzer: ^5.0.0
+  build_runner: ^2.0.0
+  source_gen: ^1.5.0
+
+builders:
+  mediator|handler_builder:
+    import: "package:mediator/src/handler_builder.dart"
+    builder_factories: ["handlerBuilder"]
+    build_extensions: {".dart": [".g.dart"]}
+    auto_apply: true
+    build_to: source
+
+
+flutter:
+
+

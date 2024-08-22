@@ -1,0 +1,9 @@
+
+### Explanation:
+
+- **Annotations**: Use `@Handler` to mark classes that should be recognized as handlers.
+- **Mediator**: The core of the pattern, managing the registration and execution of handlers.
+- **Handlers & Requests**: Separate classes for commands, queries, and their respective handlers.
+- **Code Generation**: Automates the discovery and registration of handlers using `build_runner` and `source_gen`.
+- **Test**: Ensures that the mediator works as expected.
+- **Example**: Demonstrates usage of the package.

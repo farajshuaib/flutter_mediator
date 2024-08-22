@@ -1,0 +1,8 @@
+targets:
+  $default:
+    builders:
+      mediator|handler_builder:
+        enabled: true
+        options:
+          generate_for:
+            - lib/**/*.dart
