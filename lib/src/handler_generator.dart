@@ -23,10 +23,10 @@ class HandlerGenerator extends GeneratorForAnnotation<Handler> {
 
     bool isRequestHandler = className.contains('RequestHandler');
 
+
     return '''
     // GENERATED CODE - DO NOT MODIFY BY HAND
 
-    // ignore_for_file: unused_element, unused_import, unnecessary_import
         
     part of '$fileName.dart';
     
@@ -34,16 +34,16 @@ class HandlerGenerator extends GeneratorForAnnotation<Handler> {
     final mediator = Mediator();
     
     // Register the handler
-    void _\$registerHandlers(Mediator mediator) {
+    void _\$register${className}Handler() {
       final $className handler = $className();
       
       ${isCommandHandler ? 'mediator.registerCommandHandler(handler);' : ''}
       ${isQueryHandler ? 'mediator.registerQueryHandler(handler);' : ''}
       ${isRequestHandler ? 'mediator.registerRequestHandler(handler);' : ''}
       
-      
     }
     
+   
 
     ''';
   }
