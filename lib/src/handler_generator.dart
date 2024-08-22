@@ -13,30 +13,38 @@ class HandlerGenerator extends GeneratorForAnnotation<Handler> {
 
     final classElement = element as ClassElement;
     final className = classElement.name;
-    final typeName =
-        classElement.supertype?.getDisplayString(withNullability: false);
 
-    // get file name from class name
-    final fileName = classElement.name.toLowerCase();
+    final fileName =
+        buildStep.inputId.pathSegments.last.replaceAll('.dart', '');
 
-    if (typeName == null) {
-      throw Exception('Class must extend a handler interface.');
-    }
+    bool isCommandHandler = className.contains('CommandHandler');
+
+    bool isQueryHandler = className.contains('QueryHandler');
+
+    bool isRequestHandler = className.contains('RequestHandler');
 
     return '''
     // GENERATED CODE - DO NOT MODIFY BY HAND
 
     // ignore_for_file: unused_element, unused_import, unnecessary_import
+        
+    part of '$fileName.dart';
     
-    part of '${fileName}.dart';
-    
-    import 'package:mediator/mediator.dart';
     
     final mediator = Mediator();
     
-    // Generated code
-    final handler = $className();
-    mediator.register${typeName.replaceAll('Handler', '')}Handler(handler);
+    // Register the handler
+    void _\$registerHandlers(Mediator mediator) {
+      final $className handler = $className();
+      
+      ${isCommandHandler ? 'mediator.registerCommandHandler(handler);' : ''}
+      ${isQueryHandler ? 'mediator.registerQueryHandler(handler);' : ''}
+      ${isRequestHandler ? 'mediator.registerRequestHandler(handler);' : ''}
+      
+      
+    }
+    
+
     ''';
   }
 }

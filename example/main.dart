@@ -3,11 +3,12 @@ import 'package:mediator/mediator.dart';
 import 'createUserCommand/create_user_command.dart';
 import 'createUserCommand/create_user_command_handler.dart';
 
+
+
 void main() {
   final mediator = Mediator();
 
   // Register handlers
-  mediator.registerCommandHandler(CreateUserCommandHandler());
 
   // Send command
   final result =
