@@ -1,19 +1,18 @@
-# Dart Mediator Package
+# Dart dart_mediatr Package
 
-The Dart Mediator package provides an implementation of the Mediator pattern for Dart, including dynamic handler
+The Dart mediatr package provides an implementation of the mediator pattern for Dart inspired by MediatR ASP.NET Core, including dynamic handler
 registration via code generation. This pattern is useful for organizing your application's commands and queries by
 centralizing their processing through a mediator.
 
-The Mediator pattern is a behavioral design pattern that centralizes request handling and execution. It promotes loose
+The mediator pattern is a behavioral design pattern that centralizes request handling and execution. It promotes loose
 coupling between components by removing direct dependencies between them. Instead of components communicating directly
 with each other, they communicate through a mediator object. This allows for more flexible and maintainable code, as
 components can be easily added, removed, or modified without affecting other components.
 
-<img src="https://www.researchgate.net/publication/249885094/figure/fig23/AS:532128966627333@1503880840354/UML-class-diagram-for-Mediator-pattern.png" alt="mediator class diagram" />
 
 ## Features
 
-- Mediator Pattern: Centralizes request handling and execution.
+- mediator Pattern: Centralizes request handling and execution.
 - Dynamic Handler Registration: Automatically registers handlers using code generation.
 - CQRS Support: Facilitates separation of commands (state changes) and queries (data retrieval).
 - Command and Query Handlers: Supports both command and query handlers.
@@ -26,18 +25,18 @@ components can be easily added, removed, or modified without affecting other com
 
 ## Installation
 
-To use the Dart Mediator package, add it to your `pubspec.yaml`:
+To use the dart_mediatr package, add it to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  mediator: ^0.0.1
+  dart_mediatr: ^1.0.0
 ```
 
 Then, run dart pub get to install the package.
 
 ## Usage
 
-To use the Mediator package, you need to create a `Mediator` instance and register your handlers. The `Mediator` class
+To use the dart_mediatr package, you need to create a `dart_mediatr` instance and register your handlers. The `dart_mediatr` class
 is the central component that processes requests and routes them to the appropriate handler.
 
 you can register handlers using the `registerCommandHandler` and `registerQueryHandler` methods.
@@ -55,7 +54,7 @@ dev_dependencies:
 then add the `Handler` annotation to your handler classes:
 
 ```dart
-import 'package:mediator/mediator.dart';
+import 'package:dart_mediatr/dart_mediatr.dart';
 
 import 'create_user_command.dart';
 import 'create_user_command_response.dart';
@@ -71,12 +70,12 @@ class CreateUserCommandHandler
 }
 ```
 
-then add the `@MediatorInit()` annotation to your main function:
+then add the `@dart_mediatrInit()` annotation to your main function:
 
 ```dart
-import 'package:mediator/mediator.dart';
+import 'package:dart_mediatr/dart_mediatr.dart';
 
-@MediatorInit()
+@dart_mediatrInit()
 void main() async {
   registerAllHandlers();
 
@@ -93,9 +92,9 @@ dart run build_runner build
 then import the generated file in your main file and invoke the `registerAllHandlers` function:
 
 ```dart
-import 'main.mediator.dart';
+import 'main.dart_mediatr.dart';
 
-@MediatorInit()
+@dart_mediatrInit()
 Future<void> main() async {
   registerAllHandlers();
 
@@ -107,12 +106,12 @@ Future<void> main() async {
 `registerQueryHandler` methods:
 
 ```dart
-import 'package:mediator/mediator.dart';
+import 'package:dart_mediatr/dart_mediatr.dart';
 
 void main() async {
-  Mediator mediator = Mediator();
+  dart_mediatr dart_mediatr = dart_mediatr();
 
-  mediator.registerCommandHandler(CreateUserCommandHandler());
+  dart_mediatr.registerCommandHandler(CreateUserCommandHandler());
 
   runApp(const MyApp());
 }

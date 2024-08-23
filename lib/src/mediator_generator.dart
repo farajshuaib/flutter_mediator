@@ -11,7 +11,7 @@ class MediatorGenerator extends GeneratorForAnnotation<MediatorInit> {
     final buffer = StringBuffer();
 
     buffer.writeln('// GENERATED CODE - DO NOT MODIFY BY HAND');
-    buffer.writeln('import \'package:mediator/mediator.dart\';');
+    buffer.writeln('import \'package:dart_mediatr/dart_mediatr.dart\';');
 
     final handlers = <String>[];
     final imports = <String>{};
@@ -20,7 +20,7 @@ class MediatorGenerator extends GeneratorForAnnotation<MediatorInit> {
       final library = LibraryReader(await buildStep.resolver.libraryFor(input));
 
       for (var annotatedElement
-          in library.annotatedWith(TypeChecker.fromRuntime(Handler))) {
+      in library.annotatedWith(TypeChecker.fromRuntime(Handler))) {
         final classElement = annotatedElement.element as ClassElement;
         final className = classElement.name;
         final importPath = input.uri.toString();
@@ -56,6 +56,6 @@ class MediatorGenerator extends GeneratorForAnnotation<MediatorInit> {
 }
 
 Builder mediatorInitBuilder(BuilderOptions options) => LibraryBuilder(
-      MediatorGenerator(),
-      generatedExtension: '.mediator.dart',
-    );
+  MediatorGenerator(),
+  generatedExtension: '.mediator.dart',
+);

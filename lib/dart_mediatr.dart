@@ -1,4 +1,4 @@
-import 'mediator.dart';
+import 'dart_mediatr.dart';
 
 export 'src/abstract/index.dart';
 export 'src/annotations.dart';

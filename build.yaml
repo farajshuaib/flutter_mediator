@@ -11,11 +11,8 @@ targets:
 builders:
   mediator|mediator_init_builder:
     target: ":mediator"
-    import: "package:mediator/src/mediator_generator.dart"
+    import: "package:dart_mediatr/src/mediator_generator.dart"
     builder_factories: ["mediatorInitBuilder"]
     build_extensions: { ".dart": [".mediator.dart"] }
     auto_apply: dependents
     build_to: source
-
-
-
