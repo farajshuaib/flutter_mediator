@@ -9,7 +9,7 @@ coupling between components by removing direct dependencies between them. Instea
 with each other, they communicate through a mediator object. This allows for more flexible and maintainable code, as
 components can be easily added, removed, or modified without affecting other components.
 
-<img src="https://www.researchgate.net/publication/249885094/figure/fig23/AS:532128966627333@1503880840354/UML-class-diagram-for-Mediator-pattern.png" alt="mediator class diagram" />
+![UML class diagram for Mediator pattern](https://www.researchgate.net/publication/249885094/figure/fig23/AS:532128966627333@1503880840354/UML-class-diagram-for-Mediator-pattern.png)
 
 ## Features
 
