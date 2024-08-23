@@ -1,5 +1,0 @@
-class CreateUserCommandResponse {
-
-
-  CreateUserCommandResponse();
-}

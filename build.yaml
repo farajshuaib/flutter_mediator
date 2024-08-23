@@ -2,21 +2,20 @@
 targets:
   $default:
     builders:
-      mediator|handler_builder:
+      mediator|mediator_init_builder:
         enabled: true
         options:
           generate_for:
             - lib/**/*.dart
 
 builders:
-  mediator|handler_builder:
+  mediator|mediator_init_builder:
     target: ":mediator"
-    import: "package:mediator/src/handler_builder.dart"
-    builder_factories: ["handlerBuilder"]
+    import: "package:mediator/src/mediator_generator.dart"
+    builder_factories: ["mediatorInitBuilder"]
     build_extensions: { ".dart": [".mediator.dart"] }
     auto_apply: dependents
     build_to: source
-    applies_builders: ["source_gen|combining_builder"]
 
 
 
