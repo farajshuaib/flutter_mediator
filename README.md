@@ -4,9 +4,12 @@ The Dart Mediator package provides an implementation of the Mediator pattern for
 registration via code generation. This pattern is useful for organizing your application's commands and queries by
 centralizing their processing through a mediator.
 
-The Mediator pattern is a behavioral design pattern that centralizes request handling and execution. It promotes loose coupling between components by removing direct dependencies between them. Instead of components communicating directly with each other, they communicate through a mediator object. This allows for more flexible and maintainable code, as components can be easily added, removed, or modified without affecting other components.
+The Mediator pattern is a behavioral design pattern that centralizes request handling and execution. It promotes loose
+coupling between components by removing direct dependencies between them. Instead of components communicating directly
+with each other, they communicate through a mediator object. This allows for more flexible and maintainable code, as
+components can be easily added, removed, or modified without affecting other components.
 
-<img src="https://www.researchgate.net/publication/249885094/figure/fig23/AS:532128966627333@1503880840354/UML-class-diagram-for-Mediator-pattern.png" alt="mediator class diagram" loading="lazy" />
+<img src="https://www.researchgate.net/publication/249885094/figure/fig23/AS:532128966627333@1503880840354/UML-class-diagram-for-Mediator-pattern.png" alt="mediator class diagram" />
 
 ## Features
 
@@ -15,12 +18,11 @@ The Mediator pattern is a behavioral design pattern that centralizes request han
 - CQRS Support: Facilitates separation of commands (state changes) and queries (data retrieval).
 - Command and Query Handlers: Supports both command and query handlers.
 - Handler Annotations: Use annotations to auto-register handlers using code generation.
-- Handler Registration: Manually register handlers using the `registerCommandHandler` and `registerQueryHandler` methods.
+- Handler Registration: Manually register handlers using the `registerCommandHandler` and `registerQueryHandler`
+  methods.
 - Handler Interface: Implement the `CommandHandler` and `QueryHandler` interfaces to create custom handlers.
 
-
 ## Getting Started
-
 
 ## Installation
 
@@ -38,13 +40,11 @@ Then, run dart pub get to install the package.
 To use the Mediator package, you need to create a `Mediator` instance and register your handlers. The `Mediator` class
 is the central component that processes requests and routes them to the appropriate handler.
 
-you can register handlers using the `registerCommandHandler` and `registerQueryHandler` methods. 
+you can register handlers using the `registerCommandHandler` and `registerQueryHandler` methods.
 or using the `Handler` annotation to auto register handlers using code generation.
 
-
-
-
 #### To automatically register handlers, use the `build_runner` package. Add the package to your `dev_dependencies` in
+
 `pubspec.yaml`:
 
 ```yaml
@@ -84,13 +84,11 @@ void main() async {
 }
 ```
 
-
 Then, run the build_runner to generate the registration code:
 
 ```bash
 dart run build_runner build
 ```
-
 
 then import the generated file in your main file and invoke the `registerAllHandlers` function:
 
@@ -105,8 +103,8 @@ Future<void> main() async {
 }
 ```
 
-
-#### if you hate generated code and you want to manually register handlers, use the `registerCommandHandler` and `registerQueryHandler` methods:
+#### if you hate generated code and you want to manually register handlers, use the `registerCommandHandler` and
+`registerQueryHandler` methods:
 
 ```dart
 import 'package:mediator/mediator.dart';
@@ -120,8 +118,6 @@ void main() async {
 }
 
 ```
-
-
 
 ## Contributing
 

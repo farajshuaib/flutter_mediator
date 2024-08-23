@@ -10,9 +10,6 @@ class MediatorGenerator extends GeneratorForAnnotation<MediatorInit> {
       Element element, ConstantReader annotation, BuildStep buildStep) async {
     final buffer = StringBuffer();
 
-    final fileName =
-        buildStep.inputId.pathSegments.last.replaceAll('.dart', '');
-
     buffer.writeln('// GENERATED CODE - DO NOT MODIFY BY HAND');
     buffer.writeln('import \'package:mediator/mediator.dart\';');
 
