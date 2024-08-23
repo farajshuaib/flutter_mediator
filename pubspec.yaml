@@ -1,9 +1,9 @@
 name: dart_mediatr
 description: "Simple, unambitious dart_mediatr implementation in Flutter"
-version: 1.0.1
+version: 1.0.2
 maintainer: Faraj Shuaib (@farajshuaib)
-homepage: https://github.com/farajshuaib/flutter_dart_mediatr
-repository: https://github.com/farajshuaib/flutter_dart_mediatr
+homepage: https://github.com/farajshuaib/flutter_mediator
+repository: https://github.com/farajshuaib/flutter_mediator.git
 
 environment:
   sdk: '>=3.4.1 <4.0.0'
