@@ -9,7 +9,7 @@ coupling between components by removing direct dependencies between them. Instea
 with each other, they communicate through a mediator object. This allows for more flexible and maintainable code, as
 components can be easily added, removed, or modified without affecting other components.
 
-![UML class diagram for Mediator pattern](https://www.researchgate.net/publication/249885094/figure/fig23/AS:532128966627333@1503880840354/UML-class-diagram-for-Mediator-pattern.png)
+![UML class diagram for Mediator pattern](https://github.com/badeesAbood/flutter_mediator/blob/fix/readme/assets/img.png)
 
 ## Features
 
