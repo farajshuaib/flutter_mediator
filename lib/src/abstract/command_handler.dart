@@ -1,6 +1,6 @@
 import 'command.dart';
 
-abstract class CommandHandler<TCommand extends Command<TResponse>, TResponse> {
+abstract class ICommandHandler<TCommand extends ICommand<TResponse>, TResponse> {
   TResponse handle(TCommand command);
 }
 

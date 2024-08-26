@@ -1,1 +1,1 @@
-abstract class Request<TResponse> {}
+abstract class IRequest<TResponse> {}

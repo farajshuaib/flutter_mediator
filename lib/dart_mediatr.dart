@@ -14,22 +14,22 @@ class Mediator {
 
   final Map<Type, dynamic> _handlers = {};
 
-  void registerRequestHandler<TRequest extends Request<TResponse>, TResponse>(
-      RequestHandler<TRequest, TResponse> handler) {
+  void registerRequestHandler<TRequest extends IRequest<TResponse>, TResponse>(
+      IRequestHandler<TRequest, TResponse> handler) {
     _handlers[TRequest] = handler;
   }
 
-  void registerCommandHandler<TCommand extends Command<TResponse>, TResponse>(
-      CommandHandler<TCommand, TResponse> handler) {
+  void registerCommandHandler<TCommand extends ICommand<TResponse>, TResponse>(
+      ICommandHandler<TCommand, TResponse> handler) {
     _handlers[TCommand] = handler;
   }
 
-  void registerQueryHandler<TQuery extends Query<TResponse>, TResponse>(
-      QueryHandler<TQuery, TResponse> handler) {
+  void registerQueryHandler<TQuery extends IQuery<TResponse>, TResponse>(
+      IQueryHandler<TQuery, TResponse> handler) {
     _handlers[TQuery] = handler;
   }
 
-  TResponse send<TRequest extends Request<TResponse>, TResponse>(
+  TResponse send<TRequest extends IRequest<TResponse>, TResponse>(
       TRequest request) {
     final handler = _handlers[TRequest];
     if (handler == null) {
@@ -38,7 +38,7 @@ class Mediator {
     return handler.handle(request);
   }
 
-  TResponse sendCommand<TCommand extends Command<TResponse>, TResponse>(
+  TResponse sendCommand<TCommand extends ICommand<TResponse>, TResponse>(
       TCommand command) {
     final handler = _handlers[TCommand];
     if (handler == null) {
@@ -47,7 +47,7 @@ class Mediator {
     return handler.handle(command);
   }
 
-  TResponse sendQuery<TQuery extends Query<TResponse>, TResponse>(
+  TResponse sendQuery<TQuery extends IQuery<TResponse>, TResponse>(
       TQuery query) {
     final handler = _handlers[TQuery];
     if (handler == null) {
