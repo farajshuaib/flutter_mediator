@@ -52,9 +52,8 @@ The `Mediator` class is the central component that processes requests and routes
 you can register handlers using the `registerCommandHandler` and `registerQueryHandler` methods.
 or using the `CommandHandler` and `QueryHandler` annotation to auto register handlers using code generation.
 
-#### To automatically register handlers, use the `build_runner` package. Add the package to your `dev_dependencies` in
-
-`pubspec.yaml`:
+#### automatically register handlers.
+to automatically register handlers use the `build_runner` package. Add the package to your `dev_dependencies` in `pubspec.yaml`:
 
 ```yaml
 dev_dependencies:
@@ -148,9 +147,6 @@ Finally, you can use the `Mediator` class to send commands and queries:
 
 void main() async {
   Mediator mediator = Mediator();
-
-  CreateUserCommand createUserCommand = CreateUserCommand("faraj", "farajshuaib@gmail.com");
-
 
   CreateUserCommand command = CreateUserCommand('faraj shuaib', 'farajshuaib@gmail.com');
 
