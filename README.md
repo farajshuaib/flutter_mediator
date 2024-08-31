@@ -3,23 +3,9 @@
 The Dart Mediator package provides an implementation of the Mediator pattern for Dart inspired by MediatR ASP.net Core, including dynamic handler
 registration via code generation. This pattern is useful for organizing your application's commands and queries by
 centralizing their processing through a mediator.
+read more about the mediator pattern [here](https://dev.to/farajshuaib/understanding-the-mediator-pattern-and-cqrs-with-dartmediatr-2aj7).
 
 
-### What is the Mediator Pattern?
-The Mediator pattern is a behavioral design pattern that centralizes request handling and execution. It promotes loose
-coupling between components by removing direct dependencies between them. Instead of components communicating directly
-with each other, they communicate through a mediator object. This allows for more flexible and maintainable code, as
-components can be easily added, removed, or modified without affecting other components.
-
-
-### Why use the Mediator Pattern?
-The Mediator pattern is useful for organizing your application's commands and queries by centralizing their processing
-
-### What is the CQRS?
-CQRS stands for Command Query Responsibility Segregation. It is a design pattern that separates the read and write operations of an application. Commands are used to perform state changes, while queries are used to retrieve data. This separation allows for better scalability and maintainability of the application.
-
-### Why use the Dart Mediator Package?
-The Dart Mediator package provides an implementation of the Mediator pattern for Dart inspired by MediatR ASP.net Core, 
 
 
 
