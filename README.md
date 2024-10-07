@@ -154,6 +154,3 @@ Contributions are welcome! Please follow these steps to contribute:
 
 This package is licensed under the MIT License. See the LICENSE file for details.
 
-## 👥 Contributors
-- [faraj Shuaib](https://github.com/farajshuaib) - Creator
-- [Hamed Nuri Goma](https://github.com/HAMEDNGOMA) - Contributor
