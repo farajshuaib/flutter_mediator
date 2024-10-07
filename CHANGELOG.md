@@ -1,3 +1,3 @@
-## 1.0.3
+## 1.0.4
 
-- Initial release of the dart_mediatr package.
+- now mediator working with json serilizable and freezed.

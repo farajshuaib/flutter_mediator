@@ -1,25 +1,18 @@
-# Dart Mediator Package
+# 🐦 Dart Mediator Package
 
-The Dart Mediator package provides an implementation of the Mediator pattern for Dart inspired by MediatR ASP.net Core, including dynamic handler
-registration via code generation. This pattern is useful for organizing your application's commands and queries by
-centralizing their processing through a mediator.
-read more about the mediator pattern [here](https://dev.to/farajshuaib/understanding-the-mediator-pattern-and-cqrs-with-dartmediatr-2aj7).
+The **Dart Mediator** package provides an implementation of the **Mediator** pattern for Dart, inspired by **MediatR** from ASP.NET Core. It includes dynamic handler registration via code generation. This pattern is useful for organizing your application's commands and queries by centralizing their processing through a mediator. 
+Read more about the Mediator pattern [here](https://dev.to/farajshuaib/understanding-the-mediator-pattern-and-cqrs-with-dartmediatr-2aj7).
 
+## 🚀 Features
+- 🔄 **Dynamic Handler Registration:** Automatically registers handlers using code generation.
+- 📊 **CQRS Support:** Facilitates separation of commands (state changes) and queries (data retrieval).
+- ✋ **Command and Query Handlers:** Supports both command and query handlers.
+- 🏷️ **Handler Annotations:** Use annotations `CommandHandler`, `QueryHandler`, and `RequestHandler` to auto-register handlers using code generation.
+- 📜 **Handler Registration:** Manually register handlers using the `registerCommandHandler` and `registerQueryHandler` methods.
 
+## 📦 Getting Started
 
-
-
-## Features
-- Dynamic Handler Registration: Automatically registers handlers using code generation.
-- CQRS Support: Facilitates separation of commands (state changes) and queries (data retrieval).
-- Command and Query Handlers: Supports both command and query handlers.
-- Handler Annotations: Use annotations `CommandHandler`, `QueryHandler` and `RequestHandler` to auto-register handlers using code generation.
-- Handler Registration: Manually register handlers using the `registerCommandHandler` and `registerQueryHandler`
-  methods.
-
-## Getting Started
-
-## Installation
+### Installation
 
 To use the Dart Mediator package, add it to your `pubspec.yaml`:
 
@@ -30,24 +23,22 @@ dependencies:
 
 Then, run `dart pub get` to install the package.
 
-## Usage
+### Usage
 
-To use the Mediator package, you need to create a `Mediator` instance and register your handlers. 
+To use the Mediator package, create a `Mediator` instance and register your handlers. 
 The `Mediator` class is the central component that processes requests and routes them to the appropriate handler.
 
-you can register handlers using the `registerCommandHandler` and `registerQueryHandler` methods.
-or using the `CommandHandler` and `QueryHandler` annotation to auto register handlers using code generation.
+You can register handlers using the `registerCommandHandler` and `registerQueryHandler` methods, or by using the `CommandHandler` and `QueryHandler` annotations to auto-register handlers via code generation.
 
-#### automatically register handlers.
-to automatically register handlers use the `build_runner` package. Add the package to your `dev_dependencies` in `pubspec.yaml`:
+#### 🔧 Automatically Register Handlers
+To automatically register handlers, use the `build_runner` package. Add it to your `dev_dependencies` in `pubspec.yaml`:
 
 ```yaml
 dev_dependencies:
   build_runner: ^2.0.0
 ```
 
-
-## Example
+## 📝 Example
 Create a command to create a user:
 
 ```dart
@@ -60,7 +51,6 @@ class CreateUserCommand extends ICommand<CreateUserCommandResponse> {
   CreateUserCommand(this.name, this.email);
 }
 ```
-
 
 ```dart
 import 'package:dart_mediatr/dart_mediatr.dart';
@@ -78,7 +68,6 @@ class CreateUserCommandHandler
 }
 ```
 
-
 ```dart
 class CreateUserCommandResponse {
   final String id;
@@ -93,26 +82,24 @@ class CreateUserCommandResponse {
 }
 ```
 
-
-then add the `@MediatorInit()` annotation to your main function to generate the registration code:
+Then, add the `@MediatorInit()` annotation to your main function to generate the registration code:
 
 ```dart
 import 'package:dart_mediatr/dart_mediatr.dart';
 
 @MediatorInit()
 void main() async {
-
   runApp(const MyApp());
 }
 ```
 
-Then, run the build_runner to generate the registration code:
+Now, run the build_runner to generate the registration code:
 
 ```bash
 dart run build_runner build
 ```
 
-then import the generated file in your main file and invoke the `registerAllHandlers` function:
+Then import the generated file in your main file and invoke the `registerAllHandlers` function:
 
 ```dart
 import 'package:dart_mediatr/dart_mediatr.dart';
@@ -121,62 +108,52 @@ import 'main.mediator.dart';
 @MediatorInit()
 Future<void> main() async {
   registerAllHandlers();
-
   runApp(const MyApp());
 }
 ```
 
-
-Finally, you can use the `Mediator` class to send commands and queries:
+Finally, use the `Mediator` class to send commands and queries:
 
 ```dart
-
 void main() async {
   Mediator mediator = Mediator();
-
   CreateUserCommand command = CreateUserCommand('faraj shuaib', 'farajshuaib@gmail.com');
-
   CreateUserCommandResponse response = mediator.sendCommand<CreateUserCommand, CreateUserCommandResponse>(command);
-
+}
 ```
 
-
-### Manual Handler Registration
-if you hate generated code and you want to manually register handlers, use the `registerCommandHandler` and
-`registerQueryHandler` methods:
+### 🔧 Manual Handler Registration
+If you prefer to manually register handlers, use the `registerCommandHandler` and `registerQueryHandler` methods:
 
 ```dart
 import 'package:dart_mediatr/dart_mediatr.dart';
 
 void main() async {
   Mediator mediator = Mediator();
-
   mediator.registerCommandHandler(CreateUserCommandHandler());
-
   runApp(const MyApp());
 }
-
 ```
 
-then you can use the `Mediator` class to send commands and queries as shown above.
+You can then use the `Mediator` class to send commands and queries as shown above.
 
-
-
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome! Please follow these steps to contribute:
 
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes.
-4. Run the tests (`dart test`).
-5. Commit your changes (`git commit -am 'Add new feature'`).
-6. Push to the branch (`git push origin feature-branch`).
-7. Create a new Pull Request.
-8. Get your changes reviewed.
+1. 🍴 Fork the repository.
+2. 🌳 Create a new branch (`git checkout -b feature-branch`).
+3. ✏️ Make your changes.
+4. 🧪 Run the tests (`dart test`).
+5. 💾 Commit your changes (`git commit -am 'Add new feature'`).
+6. 🚀 Push to the branch (`git push origin feature-branch`).
+7. 🔄 Create a new Pull Request.
+8. ✅ Get your changes reviewed.
 
-## License
+## 📝 License
 
 This package is licensed under the MIT License. See the LICENSE file for details.
 
-
+## 👥 Contributors
+- [faraj Shuaib](https://github.com/farajshuaib) - Creator
+- [Hamed Nuri Goma](https://github.com/HAMEDNGOMA) - Contributor

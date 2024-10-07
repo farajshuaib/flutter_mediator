@@ -20,6 +20,9 @@ class MediatorGenerator extends GeneratorForAnnotation<MediatorInit> {
     final imports = <String>{};
 
     await for (var input in buildStep.findAssets(Glob('lib/**/*.dart'))) {
+      if (input.path.endsWith('.g.dart')) {
+        continue;
+      }
       final library = LibraryReader(await buildStep.resolver.libraryFor(input));
 
       // Find all classes annotated with CommandHandler
