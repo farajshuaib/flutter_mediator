@@ -18,7 +18,7 @@ To use the Dart Mediator package, add it to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  dart_mediatr: ^1.0.3
+  dart_mediatr: ^1.0.5
 ```
 
 Then, run `dart pub get` to install the package.

@@ -9,11 +9,11 @@ class CreateUserCommandResponse {
     required this.email,
   });
 
-  factory CreateUserCommandResponse.fromJson(Map<String, dynamic> json) {
+  factory CreateUserCommandResponse.fromJson(Map<String, String> json) {
     return CreateUserCommandResponse(
-      id: json['id'],
-      name: json['name'],
-      email: json['email'],
+      id: json['id']!,
+      name: json['name']!,
+      email: json['email']!,
     );
   }
 

@@ -2,7 +2,7 @@ name: dart_mediatr
 description: "The Dart Mediator package provides an implementation of the Mediator pattern for Dart inspired by MediatR ASP.net Core, including dynamic handler
 registration via code generation. This pattern is useful for organizing your application's commands and queries by
 centralizing their processing through a mediator."
-version: 1.0.4
+version: 1.0.5
 maintainer: Faraj Shuaib (@farajshuaib)
 homepage: https://github.com/farajshuaib/flutter_mediator
 repository: https://github.com/farajshuaib/flutter_mediator.git

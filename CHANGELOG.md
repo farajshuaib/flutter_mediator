@@ -1,3 +1,3 @@
-## 1.0.4
+## 1.0.5
 
-- now mediator working with json serilizable and freezed.
+- fix generated mediator registration.

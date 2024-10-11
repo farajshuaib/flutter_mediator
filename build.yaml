@@ -1,18 +1,21 @@
-
 targets:
   $default:
     builders:
-      mediator|mediator_init_builder:
+      mediator_init_builder|mediatorInitBuilder:
         enabled: true
         options:
-          generate_for:
-            - lib/**/*.dart
+          enable_cached_builds: true
+        generate_for:
+          include:
+            - lib/**.mediator.dart
 
 builders:
-  mediator|mediator_init_builder:
-    target: ":mediator"
+  mediator_init_builder|mediatorInitBuilder:
+    target: ":mediator" # Generator name
     import: "package:dart_mediatr/src/mediator_generator.dart"
-    builder_factories: ["mediatorInitBuilder"]
-    build_extensions: { ".dart": [".mediator.dart"] }
+    builder_factories: [ "mediatorInitBuilder" ]
+    build_extensions: { ".dart": [ ".mediator.dart" ] }
     auto_apply: dependents
     build_to: source
+    applies_builders: ["source_gen|combining_builder"]
+
